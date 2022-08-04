@@ -1,0 +1,44 @@
+.grid{
+    width: 600px;
+    height: 600px;
+    border: solid #000000 1px; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+}
+.grid div{
+    width: 40px;
+    height: 40px;
+    /* top:100px; */
+}
+.invader{
+    /* background-color: rgb(157, 103, 167); */
+    /* border-radius: none; */
+    background-image: url('./images/robot40.png');
+}
+.shooter{
+    /* background-color: rgb(0, 0, 0); */
+    background-image: url("./images/star40.png" );
+}
+.laser{
+    background-image: url("./images/laser40.png");
+}
+.boom{
+    background-image: url("./images/boom40.png");
+}
+body {
+    background-image:url('/Users/danielavillanueva/Desktop/Invaders/blue_sky_pixel_animation.gif') ;
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+}
+h1{
+    color: white;
+}
+.audio{
+    display:none;
+}
