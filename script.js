@@ -14,7 +14,7 @@ let gameOver = new Audio("./music/GameOver.wav");
 let youWin = new Audio("./music/round_end.wave");
 
 sound.volume = 0.5;
-backgroundSound.volume = 0.5;
+backgroundSound.volume = 0.2;
 explosion.volume = 0.6;
 youWin.volume = 1;
 
@@ -34,10 +34,10 @@ grid.setAttribute(
   );
   
   const enemies = [
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 30, 31,
-  32, 33, 34, 35, 36, 37, 38, 39,
-  40,41,42,43,44,45,46,47,48,49,
-  50,51,52,53,54,55,56,57,58,59,
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+  15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+  30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+  40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
 ];
 
 //loop and add class to enemies
@@ -45,7 +45,7 @@ function draw() {
   for (let i = 0; i < enemies.length; i++) {
     if (!enemiesRemoved.includes(i)) {
       squares[enemies[i]].classList.add("invader");
-      // backgroundSound.play();
+      backgroundSound.play();
     }
   }
 }
@@ -105,21 +105,21 @@ function moveInvaders() {
   draw();
   //conditional once enemies , shooter touch
   if (squares[currentShooterIndex].classList.contains("invader", "shooter")) {
-    resultsDisplay.innerHTML = "Game Over";
+    resultsDisplay.innerHTML = "Game Over!";
     gameOver.play();
     clearInterval(enemiesId);
   }
 
   for (let i = 0; i < enemies.length; i++) {
     if (enemies[i] > squares.length) {
-      resultsDisplay.innerHTML = "Game Over";
+      resultsDisplay.innerHTML = "Game Over!";
       clearInterval(enemiesId);
     }
   }
   if (enemiesRemoved.length === enemies.length) {
-    resultsDisplay.innerHTML = "You Win";
-    youWin.play();
+    resultsDisplay.innerHTML = "You Win!";
     clearInterval(enemiesId);
+    youWin.play();
   }
 }
 enemiesId = setInterval(moveInvaders, 500);

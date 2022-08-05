@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 .grid{
     width: 600px;
     height: 600px;
@@ -37,8 +39,115 @@ body {
     position:relative;
 }
 h1{
+    color: rgba(194, 177, 24, 0.902);
+    position: relative;
+    font-size: 40px;
+    font-family: 'Amatic SC', cursive;
+/* }
+.audio{
+    display:none; */
+}
+.results{
     color: white;
 }
-.audio{
-    display:none;
+.link{
+    position:relative;
+    top: 220px;
+    right: 40px;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 50px;
+    border: 5px solid white;
+    display:inline-block
+
+}
+.starIntro{
+    position:relative;
+    height:130px;
+    width: 130px;
+    top: 450px;
+    right:320px;
+    
+}
+.robotIntro{
+    position:relative;
+    height:80px;
+    width: 80px;
+    right: 560px;
+    top: 30px;
+}
+.welcomeHeading{
+    color: rgba(194, 177, 24, 0.902);
+    position: relative;
+    top: 100px;
+    left: 250px;
+    font-size: 100px;
+    font-family: 'Amatic SC', cursive;
+}
+.instructionsHeading{
+    color: rgba(194, 177, 24, 0.902);
+    position: relative;
+    font-size: 70px;
+    left: 400px;
+    font-family: 'Amatic SC', cursive;
+}
+.instructions{
+    position:relative;
+    top: 330px;
+    right: 180px;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 50px;
+    border: 5px solid white;
+    display:inline-block
+
+}
+.goBack{
+    position:relative;
+
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 50px;
+    border: 5px solid white;
+    display:inline-block
+}
+h3{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top: 400px;
+    right: 330px;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 40px;
+}
+.instructionsSubHeading2{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top: 400px;
+    right: 330px;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 60px;
+}
+.instructionsSubHeading{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top: 200px;
+    right: -32px;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 60px;
+}
+.robotInstructions{
+    position:relative;
+    height: 60px;
+    width:60px;
+    left: 70px;
+    top: -65px;
 }
