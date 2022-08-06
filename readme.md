@@ -24,6 +24,10 @@ The game for this project was created with HTML, CSS, and Vanilla JavaScript. I 
 ## **Inspiration:**
 I was inpired by the game Space Invaders. I wanted to add the feeling of a retro arcade game, so I decided to give the game a pixelated design to give it a mix of old school and modern gaming. I also included 2D animations to add to the style of the game and make it more engaging.
 
+
+![SpaceInvaders-Gameplay](https://user-images.githubusercontent.com/96893640/183261644-f828b82e-ac32-4a42-9502-5d97deedcf5d.gif)
+
+
 ## **Overview of Functions used:**
 ![Screen Shot 2022-08-05 at 7 37 50 PM](https://user-images.githubusercontent.com/96893640/183223774-63b322fc-2cc4-43b3-b53f-c4e07ac64ce3.png)
 
