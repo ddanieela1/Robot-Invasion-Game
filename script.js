@@ -1,6 +1,6 @@
 const grid = document.querySelector(".grid");
 const resultsDisplay = document.querySelector(".results");
-let currentShooterIndex = 202; //202
+let shooterIndex = 202; //202
 let width = 15; //15
 let direction = 1;
 let enemiesId;
@@ -19,9 +19,9 @@ explosion.volume = 0.6;
 youWin.volume = 1;
 
 
-//create individual squares and append to created div
+//create individual squares and append squares to created div
+//223 squares fit in the grid
 for (let i = 0; i < 223; i++) {
-  //225
   const square = document.createElement("div");
   grid.appendChild(square);
 }
@@ -37,10 +37,11 @@ grid.setAttribute(
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
   15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
   30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
-  40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+  // 40, 41, 42, 43, 44, 45, 46, 
+  // 47, 48, 49,
 ];
 
-//loop and add class to enemies
+//loop enemies thorugh the created squares/ add class to enemies
 function draw() {
   for (let i = 0; i < enemies.length; i++) {
     if (!enemiesRemoved.includes(i)) {
@@ -59,29 +60,36 @@ function remove() {
 }
 
 //create shooter with a class , use index to locate in grid
-squares[currentShooterIndex].classList.add("shooter");
+squares[shooterIndex].classList.add("shooter");
 
 //add movement to the player/shooter
+//margin recognition
 function moveShooter(e) {
-  squares[currentShooterIndex].classList.remove("shooter");
+  squares[shooterIndex].classList.remove("shooter");
   switch (e.key) {
     case "ArrowLeft":
-      if (currentShooterIndex % width !== 0) currentShooterIndex -= 1;
+    //shooter can move forward as long as edge values are not 0
+      if (shooterIndex % width !== 0) shooterIndex -= 1;
       break;
+      //if shooter is not right position, then move right
     case "ArrowRight":
-      if (currentShooterIndex % width < width - 1) currentShooterIndex += 1;
+      if (shooterIndex % width < width - 1) shooterIndex += 1;
       break;
   }
-  squares[currentShooterIndex].classList.add("shooter");
+  squares[shooterIndex].classList.add("shooter");
 }
 document.addEventListener("keydown", moveShooter);
 
-//add movement to the enemies
+//add movement to the enemies//recognize margins
 function moveInvaders() {
+  // calls enemies array, checks for enemies in the left column at 0
   const leftEdge = enemies[0] % width === 0;
+  // calls the last enemy in array length where width is -1
   const rightEdge = enemies[enemies.length - 1] % width === width - 1;
+  //remove to place in different position
   remove();
 
+  //if at right position go down 1 and change direction to left
   if (rightEdge && goingRight) {
     for (let i = 0; i < enemies.length; i++) {
       enemies[i] += width + 1; //+1
@@ -90,6 +98,7 @@ function moveInvaders() {
     }
   }
 
+  //go down 1 and change direction to the right
   if (leftEdge && !goingRight) {
     for (let i = 0; i < enemies.length; i++) {
       enemies[i] += width - 1; //-1
@@ -103,8 +112,11 @@ function moveInvaders() {
   }
 
   draw();
+
   //conditional once enemies , shooter touch
-  if (squares[currentShooterIndex].classList.contains("invader", "shooter")) {
+  //place values of defeated enemies in empty array
+  //variable assigned to enemiesId to halt the game and stop movement
+  if (squares[shooterIndex].classList.contains("invader", "shooter")) {
     resultsDisplay.innerHTML = "Game Over!";
     gameOver.play();
     clearInterval(enemiesId);
@@ -124,14 +136,17 @@ function moveInvaders() {
 }
 enemiesId = setInterval(moveInvaders, 500);
 
-//create laser
-
+//create laser and boom effect
+//remove boom effect 
 function shoot(e) {
+  //use laserId variable to call upon later
   let laserId;
-  let currentLaserIndex = currentShooterIndex;
+  //same indexes assigned to both variable to allow the laser to be released from the same position
+  let currentLaserIndex = shooterIndex;
   function moveLaser() {
     if (currentLaserIndex >= 0) {
       squares[currentLaserIndex].classList.remove("laser");
+      //move laser across the board
       currentLaserIndex -= width;
       squares[currentLaserIndex].classList.add("laser");
 
@@ -157,17 +172,11 @@ function shoot(e) {
   switch (e.key) {
     case "ArrowUp":
       sound.play();
+      //called variable from before to adjust laser speed
       laserId = setInterval(moveLaser, 100);
   }
 }
 
 document.addEventListener("keydown", shoot);
-// let audioplay = document.getElementById('audio')
-// audio.addEventListener(audioplay, shoot)
 
-// toggleScreen(id,toggle){
-//   let element = document.getElementById(id);
-//   let display = (toggle) ? 'block' : 'none';
-//   element.style.display = display;
-// }
 
