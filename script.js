@@ -18,7 +18,6 @@ backgroundSound.volume = 0.2;
 explosion.volume = 0.6;
 youWin.volume = 1;
 
-
 //create individual squares and append squares to created div
 //223 squares fit in the grid
 for (let i = 0; i < 223; i++) {
@@ -31,14 +30,12 @@ const squares = document.querySelectorAll(".grid div");
 grid.setAttribute(
   "style",
   'background-image:url("360_F_259161577_CESOycx2KteeRGI7VUUBLDjz76x6MILO.jpeg")'
-  );
+);
 
-  
-  const enemies = [
-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
-  15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
-  30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
-  // 40, 41, 42, 43, 44, 45, 46, 
+const enemies = [
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 30, 31,
+  32, 33, 34, 35, 36, 37, 38, 39,
+  // 40, 41, 42, 43, 44, 45, 46,
   // 47, 48, 49,
 ];
 
@@ -69,10 +66,10 @@ function moveShooter(e) {
   squares[shooterIndex].classList.remove("shooter");
   switch (e.key) {
     case "ArrowLeft":
-    //shooter can move forward as long as edge values are not 0
+      //shooter can move forward as long as edge values are not 0
       if (shooterIndex % width !== 0) shooterIndex -= 1;
       break;
-      //if shooter is not right position, then move right
+    //if shooter is not right position, then move right
     case "ArrowRight":
       if (shooterIndex % width < width - 1) shooterIndex += 1;
       break;
@@ -138,7 +135,7 @@ function moveInvaders() {
 enemiesId = setInterval(moveInvaders, 500);
 
 //create laser and boom effect
-//remove boom effect 
+//remove boom effect
 function shoot(e) {
   //use laserId variable to call upon later
   let laserId;
@@ -179,5 +176,3 @@ function shoot(e) {
 }
 
 document.addEventListener("keydown", shoot);
-
-
