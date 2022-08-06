@@ -13,8 +13,8 @@ let explosion = new Audio("./explosions/explosion_6");
 let gameOver = new Audio("./music/GameOver.wav");
 let youWin = new Audio("./music/round_end.wave");
 
-sound.volume = 0.5;
-backgroundSound.volume = 0.2;
+sound.volume = 0.3;
+backgroundSound.volume = 0.1;
 explosion.volume = 0.6;
 youWin.volume = 1;
 
