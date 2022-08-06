@@ -32,6 +32,7 @@ grid.setAttribute(
   "style",
   'background-image:url("360_F_259161577_CESOycx2KteeRGI7VUUBLDjz76x6MILO.jpeg")'
   );
+
   
   const enemies = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
