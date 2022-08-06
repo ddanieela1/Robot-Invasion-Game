@@ -21,30 +21,39 @@ Use the ```left``` and ```right``` arrow keys to move the character left and rig
 
 The game for this project was created with HTML, CSS, and Vanilla JavaScript. I wanted to create a game in which there were enemies or obstacles that moved throughout the screen and the goal of the game is to defeat all the targets to beat the game. To create this scenario, I started by creating a basic HTML page in which I added a grid. The grid is where the basic game components were created and resulted in a game. It was then further separated into 223 squares with a width a height of 40x40. These individual squares were to be used for the enemies and main characters to travel through the grid. I created and array in which the invaders were assigned by index, and these were then attached to a loop. A function was then made and attached to the loop, which moved the enemies in the array throughout the screen as desired. The next goal I had in mind was to add movement to the player and collision detection, these were accomplished by creating functions with conditionals. I wanted to give the player the ability to defeat the enemy of the game, so I added a laser capability using a function as well. The last part of the game was to add a recognition for a win or a loss. This was done by creating a function that would recognize when player and the enemy touch and when the board is cleared resulting in a win or a loss. 
 
-## Overview of Functions used:
+## **Inspiration:**
+I was inpired by the game Space Invaders. I wanted to add the feeling of a retro arcade game, so I decided to give the game a pixelated design to give it a mix of old school and modern gaming. I also included 2D animations to add to the style of the game and make it more engaging.
+
+## **Overview of Functions used:**
 ![Screen Shot 2022-08-05 at 7 37 50 PM](https://user-images.githubusercontent.com/96893640/183223774-63b322fc-2cc4-43b3-b53f-c4e07ac64ce3.png)
 
 
-## Wireframes
+## **Wireframes**
 
 
 ![IMG_465BDE4AE269-1](https://user-images.githubusercontent.com/96893640/183228941-24f1fc05-10c7-4a6c-820f-1c35fa1da735.jpeg)
 
-## Home Screen:
+## **Home Screen:**
 ![Screen Shot 2022-08-05 at 10 08 45 PM](https://user-images.githubusercontent.com/96893640/183229474-b027ba7d-ab85-40ae-b872-9ec9934dc1af.png)
 
 
 
-## Intructions:
+## **Instructions:**
 ![Screen Shot 2022-08-05 at 9 59 57 PM](https://user-images.githubusercontent.com/96893640/183229430-6b35bbd6-e613-40c4-b3b3-b4eb53780142.png)
 
 
-## Player vs Computer:
+## **Player vs Computer:**
 
 ![Screen Shot 2022-08-05 at 10 06 43 PM](https://user-images.githubusercontent.com/96893640/183229410-7d4fe20e-96ac-4819-85ad-9b4756a1553d.png)
 
+## **Player:**
+![Screen Shot 2022-08-06 at 2 27 50 PM](https://user-images.githubusercontent.com/96893640/183261491-a58cdf5e-b404-4303-aa68-3f7cd1127bf4.png)
 
-## Code Breakdown:
+## **Invader:**
+![Screen Shot 2022-08-06 at 2 28 03 PM](https://user-images.githubusercontent.com/96893640/183261497-ed5fae93-3029-4768-977a-84e7ed48498f.png)
+
+
+## **Code Breakdown:**
 
 Since the game takes place inside a grid, this was further broken down into 223 sections which were then assigned to a variable to be called upon later when its time to loop.
 
@@ -188,5 +197,5 @@ function shoot(e) {
 
 document.addEventListener("keydown", shoot);
 ```
-## Possible Improvements:
+## **Possible Improvements:**
 After the completion of this game, I realized that this game still had room for improvement, if more time were avialable for this project I wouldve added a "Frenzy Mode" which would increase the difficulty of the game and contained of variety of robots for the player to defeat. I also considered adding a boss stage after winning the level to make the game more complete. I wouldve also added more animations to make the game more interesting and engaging for the player.
